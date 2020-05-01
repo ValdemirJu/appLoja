@@ -1,13 +1,13 @@
 // Script feito em aula com auxilio do professor
 
 function carregarClientes() {
-	var httpReq = new XMLHttpRequest();
-	var url = "https://demo0299299.mockable.io/cliente";
+	const httpReq = new XMLHttpRequest();
+	const url = "https://demo0299299.mockable.io/cliente";
 
 	httpReq.open("GET", url, false);
 	httpReq.send(null);
 
-	var res = JSON.parse(httpReq.responseText);
+	const res = JSON.parse(httpReq.responseText);
 
 	// console.log(res);
 
@@ -15,11 +15,11 @@ function carregarClientes() {
 }
 
 function carregarTabelaCliente() {
-	var clientes = carregarClientes();
+	const clientes = carregarClientes();
 
 	// ForEach jQuery
 	$.each(clientes, (index, cliente) => {
-		var linha = `
+		const linha = `
 		<tr>
 			<td>${cliente.nome}</td>
 			<td>${cliente.idade}</td>
